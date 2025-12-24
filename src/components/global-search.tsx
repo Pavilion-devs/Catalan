@@ -93,20 +93,20 @@ export function GlobalSearch() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Collapsed State - Just an icon button */}
+      {/* Collapsed State - Search trigger button */}
       {!isOpen && (
         <Button
-          variant="ghost"
+          variant="outline"
           size="sm"
           onClick={() => {
             setIsOpen(true)
             setTimeout(() => inputRef.current?.focus(), 0)
           }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 h-9 px-3 text-muted-foreground hover:text-foreground bg-muted/50 hover:bg-muted border-border/50"
         >
           <Search className="h-4 w-4" />
-          <span className="hidden sm:inline text-muted-foreground text-xs">Search pNodes</span>
-          <kbd className="hidden md:inline-flex pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
+          <span className="hidden lg:inline text-sm">Search pNodes...</span>
+          <kbd className="hidden md:inline-flex pointer-events-none h-5 select-none items-center gap-1 rounded border bg-background px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-2">
             /
           </kbd>
         </Button>

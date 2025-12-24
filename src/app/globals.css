@@ -197,31 +197,44 @@
 
 /* Wallet Adapter Button Override */
 .wallet-adapter-button-trigger {
-    height: auto !important;
-    padding: 0.375rem 0.5rem !important;
+    height: 2.25rem !important;
+    padding: 0 0.75rem !important;
     border-radius: 0.375rem !important;
-    font-size: 0.875rem !important;
-    font-weight: 600 !important;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
     transition-property: all !important;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     transition-duration: 150ms !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
 
     /* Light mode */
-    background-color: var(--background) !important;
-    color: var(--accent-foreground) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+    border: none !important;
 }
 
 .wallet-adapter-button-trigger:hover {
-    background-color: var(--accent) !important;
+    background-color: var(--primary) !important;
+    opacity: 0.9 !important;
 }
 
 .dark .wallet-adapter-button-trigger {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid var(--input) !important;
+    background-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+    border: none !important;
 }
 
 .dark .wallet-adapter-button-trigger:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0.9 !important;
+}
+
+/* Wallet button icon size */
+.wallet-adapter-button-trigger .wallet-adapter-button-start-icon {
+    width: 1rem !important;
+    height: 1rem !important;
+    margin-right: 0.5rem !important;
 }

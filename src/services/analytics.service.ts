@@ -1,5 +1,7 @@
 import type { PNode } from '@/types/pnode'
-import { prisma, isDatabaseConfigured } from '@/lib/prisma'
+
+// Note: Prisma imports are done dynamically in server-only methods
+// to prevent "global is not defined" errors in client components
 
 export interface AnomalyDetection {
   type: 'performance' | 'storage' | 'network' | 'uptime'
@@ -524,11 +526,14 @@ export class AdvancedAnalyticsService {
   }
 
   // ===== DATABASE QUERY METHODS =====
+  // These methods are SERVER-ONLY and should only be called from API routes
 
   /**
    * Check if database is available and throw informative error if not
+   * This method dynamically imports Prisma to avoid client-side errors
    */
-  private requireDatabase() {
+  private async requireDatabase() {
+    const { prisma, isDatabaseConfigured } = await import('@/lib/prisma')
     if (!isDatabaseConfigured() || !prisma) {
       throw new Error('Database not configured. Set DATABASE_URL to enable historical analytics.')
     }
@@ -539,7 +544,7 @@ export class AdvancedAnalyticsService {
    * Get network history data for charts
    */
   async getNetworkHistory(startDate: Date, endDate: Date, resolution: 'hourly' | 'daily' = 'daily') {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     // Query network snapshots with aggregation
     const snapshots = await db.networkSnapshot.findMany({
       where: {
@@ -592,7 +597,7 @@ export class AdvancedAnalyticsService {
    * Get network growth metrics
    */
   async getNetworkGrowth(days: number = 30) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const startDate = new Date(Date.now() - days * 24 * 60 * 60 * 1000)
 
     const snapshots = await db.networkSnapshot.findMany({
@@ -619,7 +624,7 @@ export class AdvancedAnalyticsService {
    * Get version distribution trends
    */
   async getVersionTrends(days: number = 30) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const startDate = new Date(Date.now() - days * 24 * 60 * 60 * 1000)
 
     const versions = await db.pNode.groupBy({
@@ -644,7 +649,7 @@ export class AdvancedAnalyticsService {
    * Get geographic distribution analysis
    */
   async getGeographicAnalysis() {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const regions = await db.pNode.groupBy({
       by: ['location'],
       where: {
@@ -705,7 +710,7 @@ export class AdvancedAnalyticsService {
    * Get top performing pNodes for leaderboard
    */
   async getTopPNodes(limit: number = 10, metric: 'performance' | 'uptime' | 'capacity' = 'performance') {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     type OrderByType = { performanceScore: 'desc' } | { uptime: 'desc' } | { capacityBytes: 'desc' }
     let orderBy: OrderByType
 
@@ -746,7 +751,7 @@ export class AdvancedAnalyticsService {
    * Get recent network events
    */
   async getNetworkEvents(limit: number = 50, severity?: string) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const validSeverities = ['INFO', 'WARNING', 'CRITICAL', 'SUCCESS'] as const
     type SeverityType = (typeof validSeverities)[number]
     const severityFilter = severity && validSeverities.includes(severity as SeverityType)
@@ -786,7 +791,7 @@ export class AdvancedAnalyticsService {
    * Get predictions based on historical data
    */
   async getPredictions(pnodePubkey?: string) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     if (pnodePubkey) {
       // Individual pNode predictions
       const snapshots = await db.pNodeSnapshot.findMany({
@@ -877,7 +882,7 @@ export class AdvancedAnalyticsService {
    * Get anomalies from database
    */
   async getAnomalies(limit: number = 50) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const anomalies = await db.anomaly.findMany({
       take: limit,
       orderBy: {
@@ -908,7 +913,7 @@ export class AdvancedAnalyticsService {
    * Get alerts from database
    */
   async getAlerts(limit: number = 100, resolved: boolean = false) {
-    const db = this.requireDatabase()
+    const db = await this.requireDatabase()
     const alerts = await db.alert.findMany({
       take: limit,
       where: {
