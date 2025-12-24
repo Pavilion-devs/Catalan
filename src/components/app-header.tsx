@@ -27,7 +27,7 @@ export function AppHeader({ links = [] }: { links: { label: string; path: string
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <span className="text-sm font-bold text-primary-foreground">O</span>
             </div>
-            <span className="font-bold text-xl tracking-tight">Opue</span>
+            <span className="font-bold text-xl tracking-tight">Catalan</span>
           </Link>
         </div>
 

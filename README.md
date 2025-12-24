@@ -1,4 +1,4 @@
-# Opue - Xandeum pNode Analytics Platform
+# Catalan - Xandeum pNode Analytics Platform
 
 > Real-time analytics and insights for the Xandeum storage network
 
@@ -7,9 +7,9 @@
 
 ## Overview
 
-Opue is a comprehensive analytics platform for monitoring and analyzing Xandeum pNodes (storage provider nodes). Built for the Xandeum ecosystem, it provides real-time insights into network health, node performance, and storage capacity.
+Catalan is a comprehensive analytics platform for monitoring and analyzing Xandeum pNodes (storage provider nodes). Built for the Xandeum ecosystem, it provides real-time insights into network health, node performance, and storage capacity.
 
-**Live Demo:** https://opue-pink.vercel.app
+**Live Demo:** https://catalan-node.vercel.app
 
 ---
 
@@ -76,8 +76,8 @@ Opue is a comprehensive analytics platform for monitoring and analyzing Xandeum 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/opue.git
-cd opue
+git clone https://github.com/Pavilion-devs/Catalan.git
+cd Catalan
 
 # Install dependencies
 npm install

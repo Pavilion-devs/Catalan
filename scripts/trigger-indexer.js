@@ -22,7 +22,7 @@ const BASE_URL = `http://localhost:${PORT}`;
 
 console.log(`
 ╔════════════════════════════════════════════════════════════╗
-║              Opue Indexer Trigger Script                   ║
+║            Catalan Indexer Trigger Script                  ║
 ╠════════════════════════════════════════════════════════════╣
 ║  Target:    ${BASE_URL.padEnd(43)}║
 ║  Interval:  ${(INTERVAL_SECONDS + ' seconds').padEnd(43)}║

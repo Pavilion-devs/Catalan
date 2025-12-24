@@ -94,7 +94,7 @@ export default function DocsPage() {
           </div>
           <h1 className="text-4xl font-bold tracking-tight mb-2">Documentation</h1>
           <p className="text-xl text-muted-foreground">
-            Everything you need to know about Opue - the Xandeum pNode Analytics Platform
+            Everything you need to know about Catalan - the Xandeum pNode Analytics Platform
           </p>
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function DocsPage() {
               <div className="pt-6 mt-6 border-t">
                 <p className="px-3 text-xs font-medium text-muted-foreground mb-2">Resources</p>
                 <a
-                  href="https://github.com/Pavilion-devs/Opue"
+                  href="https://github.com/Pavilion-devs/Catalan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -182,7 +182,7 @@ export default function DocsPage() {
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Getting Started</h2>
                   <p className="text-lg text-muted-foreground">
-                    Get up and running with Opue in under 5 minutes
+                    Get up and running with Catalan in under 5 minutes
                   </p>
                 </div>
 
@@ -199,8 +199,8 @@ export default function DocsPage() {
                   <CardContent className="space-y-4">
                     <div>
                       <p className="text-sm font-medium mb-2">1. Clone the repository</p>
-                      <CodeBlock code="git clone https://github.com/Pavilion-devs/Opue.git
-cd Opue" />
+                      <CodeBlock code="git clone https://github.com/Pavilion-devs/Catalan.git
+cd Catalan" />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-2">2. Install dependencies</p>
@@ -272,7 +272,7 @@ cd Opue" />
 
                 <SectionHeading>What&apos;s Included</SectionHeading>
                 <Paragraph>
-                  Opue comes pre-configured with everything you need:
+                  Catalan comes pre-configured with everything you need:
                 </Paragraph>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                   <li>Next.js 15 with App Router and React 19</li>
@@ -456,7 +456,7 @@ cd Opue" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">API Reference</h2>
                   <p className="text-lg text-muted-foreground">
-                    How Opue integrates with the Xandeum pRPC endpoints
+                    How Catalan integrates with the Xandeum pRPC endpoints
                   </p>
                 </div>
 
@@ -464,7 +464,7 @@ cd Opue" />
                   <CardHeader>
                     <CardTitle>pRPC Integration</CardTitle>
                     <CardDescription>
-                      Opue fetches real-time data from the Xandeum network using pRPC (pNode RPC) calls
+                      Catalan fetches real-time data from the Xandeum network using pRPC (pNode RPC) calls
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -516,7 +516,7 @@ cd Opue" />
 
                 <SectionHeading>Internal API Routes</SectionHeading>
                 <Paragraph>
-                  Opue uses Next.js API routes as a proxy to handle CORS and data transformation.
+                  Catalan uses Next.js API routes as a proxy to handle CORS and data transformation.
                 </Paragraph>
 
                 <div className="space-y-4">
@@ -591,7 +591,7 @@ cd Opue" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Architecture</h2>
                   <p className="text-lg text-muted-foreground">
-                    Technical overview of how Opue is built
+                    Technical overview of how Catalan is built
                   </p>
                 </div>
 
@@ -704,7 +704,7 @@ cd Opue" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Deployment</h2>
                   <p className="text-lg text-muted-foreground">
-                    Deploy Opue to production in minutes
+                    Deploy Catalan to production in minutes
                   </p>
                 </div>
 
@@ -799,7 +799,7 @@ CMD ["npm", "start"]`}
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Configuration</h2>
                   <p className="text-lg text-muted-foreground">
-                    Customize Opue for your needs
+                    Customize Catalan for your needs
                   </p>
                 </div>
 
@@ -811,7 +811,7 @@ CMD ["npm", "start"]`}
 NEXT_PUBLIC_XANDEUM_RPC_URL=https://api.devnet.xandeum.com:8899
 
 # Database (optional - for historical analytics)
-DATABASE_URL=postgresql://user:password@localhost:5432/opue
+DATABASE_URL=postgresql://user:password@localhost:5432/catalan
 
 # Feature Flags (optional)
 NEXT_PUBLIC_ENABLE_ALERTS=true
