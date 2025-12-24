@@ -1,9 +1,13 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { formatBytes, formatRelativeTime, truncatePublicKey, formatPercentage } from '@/lib/format';
+import { Bell, BellOff } from 'lucide-react';
+import { addToWatchlist, removeFromWatchlist, getWatchlist } from '@/lib/watchlist';
 import Link from 'next/link';
 import type { PNode } from '@/types/pnode';
 
@@ -32,6 +36,27 @@ interface PNodeTableProps {
 }
 
 export function PNodeTable({ pnodes, isLoading }: PNodeTableProps) {
+    const [watchedIds, setWatchedIds] = useState<Set<string>>(new Set());
+
+    useEffect(() => {
+        const watchlist = getWatchlist();
+        setWatchedIds(new Set(watchlist.map(w => w.pnodeId)));
+    }, []);
+
+    const handleToggleWatchlist = (pnodeId: string) => {
+        if (watchedIds.has(pnodeId)) {
+            removeFromWatchlist(pnodeId);
+            setWatchedIds(prev => {
+                const next = new Set(prev);
+                next.delete(pnodeId);
+                return next;
+            });
+        } else {
+            addToWatchlist(pnodeId);
+            setWatchedIds(prev => new Set(prev).add(pnodeId));
+        }
+    };
+
     if (isLoading) {
         return (
             <div className="border rounded-lg">
@@ -62,6 +87,7 @@ export function PNodeTable({ pnodes, isLoading }: PNodeTableProps) {
             <Table>
                 <TableHeader>
                     <TableRow>
+                        <TableHead className="w-12">Watch</TableHead>
                         <TableHead>pNode ID</TableHead>
                         <TableHead>Status</TableHead>
                         <TableHead>Storage Capacity</TableHead>
@@ -74,7 +100,22 @@ export function PNodeTable({ pnodes, isLoading }: PNodeTableProps) {
                 </TableHeader>
                 <TableBody>
                     {pnodes.map((pnode: PNode) => (
-                        <TableRow key={pnode.id} className="hover:bg-accent/50 cursor-pointer">
+                        <TableRow key={pnode.id} className="hover:bg-accent/50">
+                            <TableCell>
+                                <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    className="h-8 w-8 p-0"
+                                    onClick={() => handleToggleWatchlist(pnode.id)}
+                                    title={watchedIds.has(pnode.id) ? 'Remove from Watchlist' : 'Add to Watchlist'}
+                                >
+                                    {watchedIds.has(pnode.id) ? (
+                                        <Bell className="h-4 w-4 fill-primary text-primary" />
+                                    ) : (
+                                        <BellOff className="h-4 w-4 text-muted-foreground hover:text-primary" />
+                                    )}
+                                </Button>
+                            </TableCell>
                             <TableCell className="font-mono text-sm">
                                 <Link href={`/pnodes/${pnode.id}`} className="hover:underline">
                                     {truncatePublicKey(pnode.id, 6, 6)}

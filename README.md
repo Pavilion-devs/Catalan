@@ -76,8 +76,8 @@ Opue is a comprehensive analytics platform for monitoring and analyzing Xandeum 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/opue.git
-cd opue
+git clone https://github.com/Pavilion-devs/Opue.git
+cd Opue
 
 # Install dependencies
 npm install
