@@ -9,7 +9,7 @@
 
 Opue is a comprehensive analytics platform for monitoring and analyzing Xandeum pNodes (storage provider nodes). Built for the Xandeum ecosystem, it provides real-time insights into network health, node performance, and storage capacity.
 
-**Live Demo:** [Your deployed URL here]
+**Live Demo:** https://opue-pink.vercel.app
 
 ---
 
@@ -76,8 +76,8 @@ Opue is a comprehensive analytics platform for monitoring and analyzing Xandeum 
 
 ```bash
 # Clone the repository
-git clone https://github.com/Pavilion-devs/Opue.git
-cd Opue
+git clone https://github.com/yourusername/opue.git
+cd opue
 
 # Install dependencies
 npm install
