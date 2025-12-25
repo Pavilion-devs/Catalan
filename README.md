@@ -10,7 +10,6 @@
 Catalan is a comprehensive analytics platform for monitoring and analyzing Xandeum pNodes (storage provider nodes). Built for the Xandeum ecosystem, it provides real-time insights into network health, node performance, and storage capacity.
 
 **Live Demo:** https://catalan-node.vercel.app
-https://www.youtube.com/watch?v=0MpCRpUfQC4
 
 ---
 
