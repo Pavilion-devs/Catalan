@@ -126,7 +126,7 @@ export default function DocsPage() {
               <div className="pt-6 mt-6 border-t">
                 <p className="px-3 text-xs font-medium text-muted-foreground mb-2">Resources</p>
                 <a
-                  href="https://github.com/Pavilion-devs/Catalan"
+                  href="https://github.com/Pavilion-devs/catalan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -182,9 +182,32 @@ export default function DocsPage() {
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Getting Started</h2>
                   <p className="text-lg text-muted-foreground">
-                    Get up and running with Catalan in under 5 minutes
+                    Get up and running with catalan in under 5 minutes
                   </p>
                 </div>
+
+                {/* Demo Video */}
+                <Card className="border-primary/50 bg-primary/5">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      📹 Demo Video
+                    </CardTitle>
+                    <CardDescription>
+                      Watch Catalan in action
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                      <iframe
+                        className="absolute top-0 left-0 w-full h-full rounded-lg"
+                        src="https://www.youtube.com/embed/0MpCRpUfQC4"
+                        title="Catalan Demo Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
 
                 <Card>
                   <CardHeader>
@@ -199,8 +222,8 @@ export default function DocsPage() {
                   <CardContent className="space-y-4">
                     <div>
                       <p className="text-sm font-medium mb-2">1. Clone the repository</p>
-                      <CodeBlock code="git clone https://github.com/Pavilion-devs/Catalan.git
-cd Catalan" />
+                      <CodeBlock code="git clone https://github.com/Pavilion-devs/catalan.git
+cd catalan" />
                     </div>
                     <div>
                       <p className="text-sm font-medium mb-2">2. Install dependencies</p>
@@ -272,7 +295,7 @@ cd Catalan" />
 
                 <SectionHeading>What&apos;s Included</SectionHeading>
                 <Paragraph>
-                  Catalan comes pre-configured with everything you need:
+                  catalan comes pre-configured with everything you need:
                 </Paragraph>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                   <li>Next.js 15 with App Router and React 19</li>
@@ -456,7 +479,7 @@ cd Catalan" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">API Reference</h2>
                   <p className="text-lg text-muted-foreground">
-                    How Catalan integrates with the Xandeum pRPC endpoints
+                    How catalan integrates with the Xandeum pRPC endpoints
                   </p>
                 </div>
 
@@ -464,7 +487,7 @@ cd Catalan" />
                   <CardHeader>
                     <CardTitle>pRPC Integration</CardTitle>
                     <CardDescription>
-                      Catalan fetches real-time data from the Xandeum network using pRPC (pNode RPC) calls
+                      catalan fetches real-time data from the Xandeum network using pRPC (pNode RPC) calls
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -516,7 +539,7 @@ cd Catalan" />
 
                 <SectionHeading>Internal API Routes</SectionHeading>
                 <Paragraph>
-                  Catalan uses Next.js API routes as a proxy to handle CORS and data transformation.
+                  catalan uses Next.js API routes as a proxy to handle CORS and data transformation.
                 </Paragraph>
 
                 <div className="space-y-4">
@@ -591,7 +614,7 @@ cd Catalan" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Architecture</h2>
                   <p className="text-lg text-muted-foreground">
-                    Technical overview of how Catalan is built
+                    Technical overview of how catalan is built
                   </p>
                 </div>
 
@@ -704,7 +727,7 @@ cd Catalan" />
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Deployment</h2>
                   <p className="text-lg text-muted-foreground">
-                    Deploy Catalan to production in minutes
+                    Deploy catalan to production in minutes
                   </p>
                 </div>
 
@@ -799,7 +822,7 @@ CMD ["npm", "start"]`}
                 <div>
                   <h2 className="text-3xl font-bold tracking-tight mb-2">Configuration</h2>
                   <p className="text-lg text-muted-foreground">
-                    Customize Catalan for your needs
+                    Customize catalan for your needs
                   </p>
                 </div>
 
@@ -811,7 +834,7 @@ CMD ["npm", "start"]`}
 NEXT_PUBLIC_XANDEUM_RPC_URL=https://api.devnet.xandeum.com:8899
 
 # Database (optional - for historical analytics)
-DATABASE_URL=postgresql://user:password@localhost:5432/catalan
+DATABASE_URL=postgresql://user:password@localhost:5432/opue
 
 # Feature Flags (optional)
 NEXT_PUBLIC_ENABLE_ALERTS=true

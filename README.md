@@ -13,6 +13,16 @@ Catalan is a comprehensive analytics platform for monitoring and analyzing Xande
 
 ---
 
+## Demo Video
+
+Watch Catalan in action:
+
+[![Catalan Demo Video](https://img.youtube.com/vi/0MpCRpUfQC4/maxresdefault.jpg)](https://youtu.be/0MpCRpUfQC4)
+
+**[▶️ Watch Demo on YouTube](https://youtu.be/0MpCRpUfQC4)**
+
+---
+
 ## Screenshots
 
 <!-- Add your screenshots in a /screenshots folder -->
